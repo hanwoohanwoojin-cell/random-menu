@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>오늘 뭐 먹지? - 랜덤 메뉴 추천</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="photo-bg" id="photo-bg" aria-hidden="true"></div>
+  <div class="food-bg" id="food-bg" aria-hidden="true">
+    <span class="floating-food f1">🍕</span>
+    <span class="floating-food f2">🍜</span>
+    <span class="floating-food f3">🍣</span>
+    <span class="floating-food f4">🍔</span>
+    <span class="floating-food f5">🍰</span>
+    <span class="floating-food f6">🍲</span>
+    <span class="floating-food f7">🍢</span>
+    <span class="floating-food f8">🍝</span>
+    <span class="floating-food f9">🧇</span>
+    <span class="floating-food f10">🍙</span>
+    <span class="floating-food f11">🍤</span>
+    <span class="floating-food f12">🧁</span>
+  </div>
+  <canvas id="confetti-canvas" aria-hidden="true"></canvas>
+
+  <main class="container">
+    <section class="card" aria-live="polite">
+      <header class="header">
+        <span class="subtitle">결정 장애 해결사</span>
+        <h1 class="title">오늘 뭐 먹지?</h1>
+      </header>
+
+      <div class="category-filters" role="group" aria-label="메뉴 카테고리 선택">
+        <button class="filter-btn active" data-category="전체" type="button">전체</button>
+        <button class="filter-btn" data-category="한식" type="button">한식</button>
+        <button class="filter-btn" data-category="중식" type="button">중식</button>
+        <button class="filter-btn" data-category="일식" type="button">일식</button>
+        <button class="filter-btn" data-category="양식" type="button">양식</button>
+        <button class="filter-btn" data-category="분식" type="button">분식</button>
+        <button class="filter-btn" data-category="아시안" type="button">아시안</button>
+        <button class="filter-btn" data-category="디저트" type="button">디저트</button>
+      </div>
+
+      <div class="result-stage" id="result-stage">
+        <div class="menu-visual">
+          <div class="menu-emoji" id="menu-emoji" aria-hidden="true">🍽️</div>
+          <img class="menu-photo hidden" id="menu-photo" src="" alt="" />
+        </div>
+        <div class="menu-badge-wrap">
+          <span class="menu-badge hidden" id="menu-category"></span>
+        </div>
+        <h2 class="menu-name" id="menu-name">버튼을 눌러 메뉴를 뽑아보세요!</h2>
+        <p class="menu-desc" id="menu-desc">한식, 중식, 일식, 양식, 분식, 아시안, 디저트까지 21가지 메뉴가 기다리고 있어요.</p>
+      </div>
+
+      <button class="recommend-btn" id="recommend-btn" type="button">
+        <span class="btn-icon" aria-hidden="true">🎲</span>
+        <span class="btn-text">메뉴 추천하기</span>
+      </button>
+
+      <div class="history-section hidden" id="history-section">
+        <span class="history-label">방금 나온 메뉴</span>
+        <ul class="history-list" id="history-list"></ul>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
